@@ -1,10 +1,9 @@
 const http = require('http');
-const Logger = require('./Logger');
+const logger = require('./Logger');
 const Store = require('./Store');
 
 const hostname = '127.0.0.1';
 const port = 3000;
-const logger = new Logger().getInstance();
 
 logger.log('Starting app...');
 
