@@ -1,7 +1,7 @@
 const http = require('http');
 const logger = require('./Logger');
 const Store = require('./Store');
-const Shopper = require('./Shopper');
+const shopper_prototype = require('./shopper_prototype');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -16,18 +16,12 @@ const store = new Store('Jeans Beans', [
   },
 ]);
 
-const jean = new Shopper('JeanBean');
-jean.addItemToList('food');
-jean.addItemToList('plants');
-jean.addItemToList('drank');
-jean.addItemToList('coffee');
+const jean = shopper_prototype.clone();
+jean.name = 'Jean Bean';
 jean.addItemToList('The Sims');
 
-const leo = new Shopper('Leo Bae');
-leo.addItemToList('food');
-leo.addItemToList('plants');
-leo.addItemToList('drank');
-leo.addItemToList('coffee');
+const leo = shopper_prototype.clone();
+leo.name = 'Leo Bae';
 leo.addItemToList('Factorio');
 
 logger.log(`${jean.name}: ${jean.shoppingList}`);
