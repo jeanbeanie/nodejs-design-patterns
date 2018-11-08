@@ -10,7 +10,7 @@ class Logger {
   log(message) {
     const timestamp = new Date().toISOString();
     this.logs.push({message, timestamp});
-    console.log(`${timestamp} - ${messsage}`);
+    console.log(`${timestamp} - ${message}`);
   }
 }
 
